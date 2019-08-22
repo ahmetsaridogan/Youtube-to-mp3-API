@@ -4,7 +4,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use YoutubeDl\YoutubeDl;
 
 define("DOWNLOAD_FOLDER", dirname(__FILE__)."/download/"); //Be sure the chmod the download folder
-define("DOWNLOAD_FOLDER_PUBLIC", "http://michaelbelgium.me/ytconverter/download/");
+define("DOWNLOAD_FOLDER_PUBLIC", "http://youtube-mp3.test/download/");
 define("DOWNLOAD_MAX_LENGTH", 0); //max video duration (in seconds) to be able to download, set to 0 to disable
 
 header("Content-Type: application/json");
@@ -45,8 +45,9 @@ if(isset($_GET["youtubelink"]) && !empty($_GET["youtubelink"]))
 			'audio-format' => 'mp3',
 			'audio-quality' => 0, 
 			'output' => '%(id)s.%(ext)s',
-			//'ffmpeg-location' => '/usr/local/bin/ffmpeg'
+			'ffmpeg-location' => '/usr/local/bin/ffmpeg'
 		));
+		$dl->setBinPath('/usr/local/bin/youtube-dl');
 
 		$dl->setDownloadPath(DOWNLOAD_FOLDER);
 	}

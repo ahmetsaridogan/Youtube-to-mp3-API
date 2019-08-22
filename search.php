@@ -1,7 +1,7 @@
 <?php
 
 define("MAX_RESULTS", 10);
-define("API_KEY", "");
+define("API_KEY", "25849550e120841fab705be4539df00dc9393271");
 
 require_once __DIR__ . '/vendor/autoload.php';
 
