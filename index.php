@@ -52,7 +52,7 @@
                             <td><span id="duration">0</span> seconds</td>
                         </tr>
                         <tr>
-                            <td><a class="btn btn-outline-primary disabled" href="#" id="download"><i class="fa fa-cloud-download" aria-hidden="true"></i> Listen/download</a></td>
+                            <td><a class="btn btn-outline-primary disabled" href="#" id="download" target="_blank"><i class="fa fa-cloud-download" aria-hidden="true"></i> Listen/download</a></td>
                             <td></td>
                         </tr>
                     </tbody>
@@ -87,7 +87,7 @@
 
                         $("#duration").text(data.duration);
                         $("#title").text(data.title);
-                        $("#download").attr("href", data.file);
+                        $("#download").attr("href", data.url);
                         $("#download").removeClass("disabled");
                     }
                 });
